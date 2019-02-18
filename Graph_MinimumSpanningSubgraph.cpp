@@ -6,7 +6,6 @@ typedef long long ll;
 vector<ll> taken(N,1);
 vector<pair<ll,ll>> g[N];
 priority_queue<pair<ll,ll>> pi;
-//map<pair<ll,ll>,ll> t;
 void process(ll v)
 {
     taken[v]=1;
@@ -19,6 +18,7 @@ void process(ll v)
         ll w=p.second;
         if(taken[u]==0)
         {
+
             pi.push(make_pair(-w,-u));
         }
     }
@@ -37,17 +37,17 @@ int main()
     {
         ll x,y,w;
         char status;
-
         cin>>x>>y>>w>>status;
         if(status=='V')
         {
+            //cout<<"MST cost set!\n";
            mst_cost+=w;
+           w=0;
         }
-        else
-        {
+
             g[x].push_back(make_pair(y,w));
             g[y].push_back(make_pair(x,w));
-        }
+
     }
 
     process(0);
@@ -59,6 +59,7 @@ int main()
         ll w=-t.first;
         if(!taken[v])
             {
+                //cout<<"cost of edge to "<<v<<" added "<<w<<endl;
                 mst_cost+=w;
                 process(v);
             }
