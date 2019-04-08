@@ -34,7 +34,7 @@ int bin_rot_count(ll start,ll end)
     if(start==end)
         return start;
     ll mid=(start+end)>>1;
-    if(mid<end && a[mid]<a[mid])
+    if(mid<end && a[mid+1]<a[mid])
         return mid+1;
     if(mid<end && a[mid-1]>a[mid])
         return mid;
