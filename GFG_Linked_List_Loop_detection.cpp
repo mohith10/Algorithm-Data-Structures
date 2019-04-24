@@ -39,7 +39,7 @@ void display(struct node* head)
     }
     cout<<endl;
 }
-bool Loop_Detect(head)
+bool Loop_Detect(struct node* head)
 {
     struct node* slow=head;
     struct node* fast=head;
