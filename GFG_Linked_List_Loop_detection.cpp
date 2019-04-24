@@ -46,7 +46,7 @@ bool Loop_Detect(head)
     while(slow && fast && fat->next)
     {
         fast=fast->next->next;
-        slow=slow->nextl
+        slow=slow->next;
         if(fast==slow)
         {
             return true;
