@@ -10,19 +10,21 @@ int main()
     for(ll i=0;i<n;i++)
     {
         cin>>a[i];
+        tab[a[i]]++;
     }
     bool res=true;
     for(ll i=0;i<5;i++)
        {
            cin>>sub[i];
-           tab[sub[i]]++;
+           
        }
-    for(ll i=0;i<n;i++)
+    for(ll i=0;i<5;i++)
     {
-        if(tab[a[i]]>0)
-            tab[a[i]]--;
+        if(tab[sub[i]]>0)
+            tab[sub[i]]--;
         else
         {
+            //cout<<"Failed for "<<sub[i]<<endl;
             res=false;
             break;
         }
