@@ -17,5 +17,5 @@ int main()
         min_price = min(a[i],min_price);
         max_profit = max(max_profit,a[i]-min_price);
     }
-    cout<<max_price;
+    cout<<max_profit;
 }
